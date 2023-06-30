@@ -11,5 +11,26 @@ export async function GET(req) {
     await supabase.auth.exchangeCodeForSession(code);
   }
 
-  return NextResponse.redirect(new URL("/account", req.url));
+  return NextResponse.redirect(new URL("/tasks", req.url));
 }
+
+const state = [
+  {
+    id: "",
+    title: "",
+    description: "",
+    issues: [
+      { id: "", title: "", description: "" },
+      { id: "", title: "", description: "" },
+    ],
+  },
+  {
+    id: "",
+    title: "",
+    description: "",
+    issues: [
+      { id: "", title: "", description: "" },
+      { id: "", title: "", description: "" },
+    ],
+  },
+];
